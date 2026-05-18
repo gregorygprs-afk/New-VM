@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-black: #000000;
+  --color-brand-white: #FFFFFF;
+  --color-brand-orange: #C72A09;
+  
+  --font-sans: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-display: "Helvetica Neue", "Inter", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-black text-brand-white font-sans antialiased overflow-x-hidden;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-brand-black;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-brand-orange rounded-full;
+}
+
+.outline-text {
+  -webkit-text-stroke: 1px white;
+  color: transparent;
+}
+
+.outline-text-orange {
+  -webkit-text-stroke: 1px #C72A09;
+  color: transparent;
+}
+
+.mask-reveal {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.marquee-container {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: 2rem;
+}
+
+.marquee-content {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+  min-width: 100%;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee-reverse {
+  animation: marquee 30s linear infinite reverse;
+}
+
+.liquid-text {
+  color: transparent;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Ccircle cx='50' cy='180' r='4' fill='%23C72A09'/%3E%3Ccircle cx='90' cy='160' r='2' fill='%23C72A09'/%3E%3Ccircle cx='140' cy='190' r='5' fill='%23C72A09'/%3E%3Ccircle cx='200' cy='170' r='3' fill='%23C72A09'/%3E%3Ccircle cx='260' cy='185' r='4' fill='%23C72A09'/%3E%3Ccircle cx='310' cy='155' r='2' fill='%23C72A09'/%3E%3Ccircle cx='360' cy='175' r='5' fill='%23C72A09'/%3E%3Cpath fill='%23C72A09' d='M110,170 Q113,150 116,170 Q113,190 110,170 Z' /%3E%3Cpath fill='%23C72A09' d='M230,165 Q233,145 236,165 Q233,185 230,165 Z' /%3E%3Cpath fill='%23C72A09' d='M330,180 Q333,160 336,180 Q333,200 330,180 Z' /%3E%3Cpath fill='%23C72A09' d='M0,200 C80,240 120,160 200,200 C280,240 320,160 400,200 L400,400 L0,400 Z'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-size: 400px 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: wave-x 2s linear infinite;
+}
+
+@keyframes wave-x {
+  0% { background-position-x: 0px; }
+  100% { background-position-x: -400px; }
+}
