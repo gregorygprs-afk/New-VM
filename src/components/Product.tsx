@@ -67,7 +67,7 @@ export const Product = () => {
           className="mb-24"
         >
           <span className="text-brand-orange text-xs uppercase tracking-[0.4em] mb-4 block font-bold">
-            ARQUITETURA DOS FORMATOS DE CONSULTORIA
+            CONHEÇA OS TRÊS FORMATOS DA
           </span>
           <h2 className="text-4xl md:text-9xl font-black tracking-tighter uppercase leading-[0.8] mb-12">
             CONSULTORIA <br /> <span className="text-brand-orange">EXPRESS-3</span>

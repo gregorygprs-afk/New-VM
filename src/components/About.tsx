@@ -5,7 +5,7 @@ export const About = () => {
   const { scrollYProgress } = useScroll();
   const scale = useTransform(scrollYProgress, [0.1, 0.3], [0.9, 1]);
 
-  const text = "“Fórmulas funcionam na matemática e receitas prontas em bolos.”";
+  const text = "Sem receita mágica, sem palestrinha, meu objetivo é ser prático e funcional voltado para apenas as suas necessidades!";
   const words = text.split(" ");
 
   return (
@@ -46,26 +46,16 @@ export const About = () => {
             Trabalhando por todo esse tempo junto com artistas da música, marcas e empresas de moda, criando conceitos que falam por si mesmos. Baseado em um método que é quase uma filosofia de vida:
           </motion.p>
 
-          <div className="py-20 border-y border-brand-white/5">
-            <h2 className="text-3xl md:text-6xl font-bold leading-none flex flex-wrap gap-x-4 gap-y-4 uppercase tracking-tighter">
-              {words.map((word, i) => (
-                <div key={i} className="overflow-hidden">
-                  <motion.span
-                    initial={{ y: "100%" }}
-                    whileInView={{ y: 0 }}
-                    transition={{ 
-                      duration: 0.8, 
-                      delay: i * 0.02,
-                      ease: [0.16, 1, 0.3, 1]
-                    }}
-                    viewport={{ once: false, amount: 0.1 }}
-                    className="block text-brand-orange"
-                  >
-                    {word}
-                  </motion.span>
-                </div>
-              ))}
-            </h2>
+          <div className="py-12 md:py-16 border-y border-brand-white/5">
+            <motion.h2 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              viewport={{ once: false, amount: 0.1 }}
+              className="text-3xl md:text-5xl font-extrabold text-brand-orange uppercase leading-snug tracking-tighter"
+            >
+              Sem receita mágica, sem palestrinha, meu objetivo é ser prático e funcional voltado para apenas as suas necessidades!
+            </motion.h2>
           </div>
         </div>
       </motion.div>

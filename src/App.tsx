@@ -7,6 +7,7 @@ import React, { useEffect, useState } from 'react';
 import Lenis from 'lenis';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { motion } from 'motion/react';
 import { Preloader } from './components/Preloader';
 import { Home } from './components/Home';
 import { About } from './components/About';
@@ -19,6 +20,20 @@ import { Contact } from './components/Contact';
 import { CustomCursor } from './components/CustomCursor';
 
 gsap.registerPlugin(ScrollTrigger);
+
+const SectionWrapper = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.05 }}
+      transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+      className="w-full"
+    >
+      {children}
+    </motion.div>
+  );
+};
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -52,13 +67,13 @@ export default function App() {
       {!isLoading && (
         <div className="relative z-0">
           <Home />
-          <About />
-          <Education />
-          <Expertise />
-          <Metrics />
-          <Process />
-          <Product />
-          <Contact />
+          <SectionWrapper><About /></SectionWrapper>
+          <SectionWrapper><Education /></SectionWrapper>
+          <SectionWrapper><Expertise /></SectionWrapper>
+          <SectionWrapper><Metrics /></SectionWrapper>
+          <SectionWrapper><Process /></SectionWrapper>
+          <SectionWrapper><Product /></SectionWrapper>
+          <SectionWrapper><Contact /></SectionWrapper>
         </div>
       )}
     </main>

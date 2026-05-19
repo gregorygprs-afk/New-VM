@@ -77,7 +77,7 @@ const RollingNumber = ({ value }: { value: number }) => {
   return <span ref={ref}>{displayValue.toFixed(value === 1.3 ? 1 : 0)}</span>;
 };
 
-const StatItem = ({ stat, index }: { stat: typeof stats[0], index: number }) => {
+const StatItem = ({ stat, index }: { stat: typeof stats[0], index: number, key?: React.Key }) => {
   return (
     <motion.div 
       initial={{ opacity: 0, x: -20 }}

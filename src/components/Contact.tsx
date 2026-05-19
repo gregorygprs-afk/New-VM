@@ -13,7 +13,7 @@ const contactCards = [
     label: "WhatsApp",
     value: "47 9 9992-2517",
     icon: <Phone className="w-5 h-5" />,
-    link: "https://wa.me/5547999922517"
+    link: "https://wa.me/5547999922517?text=Oii%20Greg!%20Vim%20pelo%20site%20da%20consultoria%20Express-3%20e%20gostaria%20de%20saber%20as%20datas%20dispon%C3%ADveis%20e%20agendar%20uma%20conversa!"
   },
   {
     label: "Instagram",
@@ -23,7 +23,7 @@ const contactCards = [
   }
 ];
 
-const ContactCard = ({ card, i }: { card: typeof contactCards[0], i: number }) => {
+const ContactCard = ({ card, i }: { card: typeof contactCards[0], i: number, key?: React.Key }) => {
   const cardRef = useRef<HTMLAnchorElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
