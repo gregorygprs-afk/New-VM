@@ -4,15 +4,15 @@ import { motion } from 'motion/react';
 const steps = [
   {
     id: "01",
-    title: "Contratação & Lock-in",
-    subtitle: "Imediato",
-    desc: "Gatilho de largada com contrato assinado e comprovação de sinal."
+    title: "Validação das Datas",
+    subtitle: "Agendamento",
+    desc: "Agendamento, verificamos as datas disponíveis pra iniciar os projetos."
   },
   {
     id: "02",
-    title: "Onboarding Digital",
-    subtitle: "Até 48h úteis",
-    desc: "Coleta intensiva de briefing e materiais obrigatórios (Kit de Mídia)."
+    title: "Onboarding",
+    subtitle: "Após a data agendada",
+    desc: "O onboarding é o processo de conversarmos, entender as necessidades e coletar os dados."
   },
   {
     id: "03",
